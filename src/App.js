@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import bootstrap from "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import EmiCalculate from "./Component/EmiCalculate";
+import EmiResult from "./Component/EmiResult";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>hello</h1>
+      {true && <h1>ekkoo</h1>} */}
+
+      <Router>
+        <Switch>
+          <Route path="/" exact component={EmiCalculate} />
+          <Route path="/emi" exact component={EmiResult} />
+        </Switch>
+      </Router>
     </div>
   );
 }
